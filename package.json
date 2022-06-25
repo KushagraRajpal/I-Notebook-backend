@@ -4,9 +4,11 @@
   "description": "inoteboook - Your notebook on the cloud",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "serve -s build",
-    "dev": "set PORT=3001 && react-scripts start"
+    "start": "nodemon  --exec node --experimental-modules index.js",
+    "dev": "nodemon --es-module-specifier-resolution=node",
+    "format": "prettier --write \"**/*.(js)\"",
+    "deploy": "npm run format && git push && git push heroku master",
+    "start:pm2": "pm2 start index.js --node-args=\"--es-module-specifier-resolution=node\""
   },
   "author": "",
   "license": "ISC",
