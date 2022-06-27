@@ -22,6 +22,9 @@ app.use(function (req, res, next) {
   });
 app.use(express.json())
 // Available Routes
+app.get("/", (req, res) => {
+  res.json({ message: `Server is Running :> ${new Date().toLocaleString()}` });
+});
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
 
