@@ -4,7 +4,7 @@
   "description": "inoteboook - Your notebook on the cloud",
   "main": "index.js",
   "scripts": {
-    "start": "node --exec node --experimental-modules index.js",
+    "start": "node --es-module-specifier-resolution=node index",
     "dev": "nodemon --es-module-specifier-resolution=node",
     "format": "prettier --write \"**/*.(js)\"",
     "deploy": "npm run format && git push && git push heroku master",
